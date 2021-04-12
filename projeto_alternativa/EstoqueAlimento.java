@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class EstoqueAlimento extends CestaBasica {
+	Scanner ler = new Scanner(System.in);
 
 	public EstoqueAlimento(String nome, List<String> produto, List<Integer> estoque,
 			List<Integer> composicaoReferencia) {
@@ -14,24 +15,20 @@ public class EstoqueAlimento extends CestaBasica {
 	}
 
 	@Override
-	public void doar(int codigoProduto, double qtd) {
+	public void doar(int codigoProduto) {
 		// TODO Auto-generated method stub
-
+		System.out.println("qual valor você gostaria de doar?");
+		int qtd = ler.nextInt();
 		int novaQtd = estoque.get(codigoProduto) + qtd;
 		estoque.set(codigoProduto, novaQtd);
-
-		System.out.println("Seu estoque aumentou, agora ele é de " + estoque.get(codigoProduto));
-		System.out.println("Obrigado peladoação!");
-
 	}
-	
 
 	@Override
 	public void visualizar() {
 		// TODO Auto-generated method stub
 		System.out.println("Produto / Quantidade");
 		System.out.println("-----------------------------------");
-		for (int i = 1; i < estoque.size(); i++) {
+		for (int i = 0; i < estoque.size(); i++) {
 			System.out.println(produto.get(i) + " = " + estoque.get(i));
 		}
 	}
@@ -40,7 +37,7 @@ public class EstoqueAlimento extends CestaBasica {
 	public void calcularCestas() {
 		// TODO Auto-generated method stub
 		List<Integer> nCestas = new ArrayList<Integer>();
-		for (int i = 1; i < estoque.size(); i++) {
+		for (int i = 0; i < estoque.size(); i++) {
 			nCestas.add(estoque.get(i) / composicaoReferencia.get(i));
 			Collections.sort(nCestas);
 		}
@@ -51,16 +48,14 @@ public class EstoqueAlimento extends CestaBasica {
 	public void distribuirCestas(int n) {
 		// TODO Auto-generated method stub
 		List<Integer> nCestas = new ArrayList<Integer>();
-		for (int i = 1; i < estoque.size(); i++) {
-			System.out.println(produto.get(i) + " = " + estoque.get(i));
-			nCestas.add(estoque.get(i) / composicaoReferencia.get(i));
+		for (int i = 0; i < estoque.size(); i++) {
 		}
 
 		Collections.sort(nCestas);
 		int a = nCestas.get(0);
 
 		if (a > 0) {
-			for (int i = 1; i < estoque.size(); i++) {
+			for (int i = 0; i < estoque.size(); i++) {
 				int atual = estoque.get(i);
 				int ref = estoque.get(i);
 				estoque.set(i, n * (atual - ref));
@@ -70,10 +65,6 @@ public class EstoqueAlimento extends CestaBasica {
 			System.out.println("Quantidade de cestas insuficientes ...");
 		}
 
-		
-		
-		
-		
 	}
 
 }
