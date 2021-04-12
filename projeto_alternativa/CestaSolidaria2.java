@@ -19,15 +19,16 @@ public class CestaSolidaria2 {
 		List<String> produto = new ArrayList<String>();
 		List<Integer> estoque = new ArrayList<Integer>();
 
+		
 		// Estoque Padrao de Fábrica
 		String nome = "estoquePadrao";
 
-		String[] arrayproduto = { "arroz", "açúcar", "biscoito", "café", "farinha de trigo", "feijão", "leite em pó",
+		String[] arrayproduto = {"arroz", "açúcar", "biscoito", "café", "farinha de trigo", "feijão", "leite em pó",
 				"macarrão", "manteiga", "molho de tomate", "óleo", "sal", "sardinha", "seleta de legumes",
 				"condicionador", "creme dental", "desodorante", "escova de dentes", "papel higienico", "sabonete",
 				"shampoo" };
 
-		int[] arrayestoque = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+		int[] arrayestoque = { 10, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2 };
 
 		int[] arraycb1 = { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
 
@@ -38,6 +39,18 @@ public class CestaSolidaria2 {
 		}
 
 		EstoqueAlimento meuEstoque = new EstoqueAlimento(nome, produto, estoque, cb1);
+		
+		//Estoquedinheiro primeiro objeto
+		String nome2 = "Caixa";
+		List<Integer> estoque2 = new ArrayList<Integer>();
+		List<String> produto2 = new ArrayList<String>();
+		List<Integer> cbDinheiro = new ArrayList<Integer>();
+		produto2.add("Dinheiro");
+		estoque2.add(1000);
+		cbDinheiro.add(400);
+		
+		EstoqueDinheiro meuEstoque2 = new EstoqueDinheiro (nome2, produto2, estoque2, cbDinheiro);
+		
 
 		// Menu principal
 
@@ -87,10 +100,7 @@ public class CestaSolidaria2 {
 			}
 			
 			// Visualizar Estoque
-			if (opt2 == 2) {
-				
-				System.out.println("Produto / Quantidade");
-				System.out.println("-----------------------------------");
+			if (opt2 == 2) {			
 				meuEstoque.visualizar();
 				
 				

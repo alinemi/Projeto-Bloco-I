@@ -24,7 +24,7 @@ public abstract class CestaBasica {
 	}
 		
 	
-	abstract public void doar(int codigoProduto, int qtd); 
+	abstract public void doar(int codigoProduto); 
 		
 	abstract public void visualizar(); 
 			

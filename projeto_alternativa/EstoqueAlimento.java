@@ -14,7 +14,7 @@ public class EstoqueAlimento extends CestaBasica {
 	}
 
 	@Override
-	public void doar(int codigoProduto, int qtd) {
+	public void doar(int codigoProduto, double qtd) {
 		// TODO Auto-generated method stub
 
 		int novaQtd = estoque.get(codigoProduto) + qtd;
@@ -24,10 +24,13 @@ public class EstoqueAlimento extends CestaBasica {
 		System.out.println("Obrigado peladoação!");
 
 	}
+	
 
 	@Override
 	public void visualizar() {
 		// TODO Auto-generated method stub
+		System.out.println("Produto / Quantidade");
+		System.out.println("-----------------------------------");
 		for (int i = 1; i < estoque.size(); i++) {
 			System.out.println(produto.get(i) + " = " + estoque.get(i));
 		}
