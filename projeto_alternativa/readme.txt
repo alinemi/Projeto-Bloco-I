@@ -1,0 +1,1 @@
+Essa alternativa utiliza de opções de POO como criação de objetos, aplicação de de métodos, herança, polimorfismo e collections.
