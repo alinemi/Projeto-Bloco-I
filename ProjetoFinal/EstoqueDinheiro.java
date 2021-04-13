@@ -15,6 +15,13 @@ public class EstoqueDinheiro extends CestaBasica {
 		super(nome, produto, estoque, composicaoReferencia);
 	}
 
+//	public String formatarMoeda() {
+//        NumberFormat nf = NumberFormat.getCurrencyInstance();
+//        nf.setMinimumFractionDigits(2);
+//        String formatoMoeda = nf.format(estoque);
+//        return formatoMoeda;
+	// }
+
 	@Override
 	public void doar(int codigoProduto) {
 		System.out.println("qual valor você gostaria de doar?");
@@ -30,15 +37,15 @@ public class EstoqueDinheiro extends CestaBasica {
 	@Override
 	public void visualizar() {
 		// TODO Auto-generated method stub
-		System.out.println("-----------------------------------");
-		 NumberFormat nf = NumberFormat.getCurrencyInstance();
-	        nf.setMinimumFractionDigits(2);
-	        String formatoMoeda = nf.format(estoque);
-	        
-		// for (int i = 1; i < estoque.size(); i++) {
-		// System.out.println(produto.get(i) + " = " + estoque.get(i));
+		System.out.println("-----------------------------------");	
+		
+	//	for (int i = 1; i < estoque.size(); i++) {
+	//	System.out.println(produto.get(i) + " = " + estoque.get(i)+" R$");
+		}
 		// System.out.println(NumberFormat.getCurrencyInstance().format(dinheiro));
-		System.out.println("Dinheiro em caixa = " + estoque.get(0));
+		//System.out.println("Dinheiro em caixa = " + estoque.get(0).formatarMoeda());
+	   //  System.out.println("Dinheiro em caixa" + this.formatarMoeda());
+		//System.out.println(NumberFormat.getCurrencyInstance().format(estoque.get(0)));
 
 	}
 //	}

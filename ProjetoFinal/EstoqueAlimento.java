@@ -59,7 +59,7 @@ public class EstoqueAlimento extends CestaBasica {
 		if (a >= n) {
 			for (int i = 0; i < estoque.size(); i++) {
 				int atual = estoque.get(i);
-				int ref = estoque.get(i);
+				int ref = composicaoReferencia.get(i);
 				estoque.set(i, n * (atual - ref));				
 			}
 		System.out.println("Seu estoque foi atualizado com sucesso!");
